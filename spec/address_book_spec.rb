@@ -49,6 +49,27 @@ RSpec.describe AddressBook do
       it "initializes entries as empty" do
         expect(book.entries.size).to eq(0)
       end
+
+      it "imports the 1st entry from 2nd csv" do
+        expect(book).to respond_to(:entries)
+        book.import_from_csv("entries_2.csv")
+        entry_one = book.entries[0]
+
+        check_entry(entry_one, "A", "555-555-4851", "a@blocmail.com")
+      end
+
+      it "imports the 2nd entry from 2nd csv" do
+        book.import_from_csv("entries_2.csv")
+        entry_two = book.entries[1]
+        check_entry(entry_two, "B", "555-555-5412", "b@blocmail.com")
+      end
+
+      it "imports the 3rd entry from 2nd csv" do
+        book.import_from_csv("entries_2.csv")
+        entry_three = book.entries[2]
+        check_entry(entry_three, "C", "555-555-3663", "c@blocmail.com")
+      end
+
     end
 
   describe "#add_entry" do
