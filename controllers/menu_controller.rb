@@ -14,11 +14,18 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
     puts "5 - Exit"
+    puts "0 - Demolish your address book"
     print "Enter your selection: "
 
     selection = gets.to_i
 
     case selection
+      when 0
+        system "clear"
+        demolish
+        puts "DEMOLISHED!!!!!"
+        main_menu
+
       when 1
         system "clear"
         view_all_entries
@@ -177,5 +184,11 @@ class MenuController
 
       puts "Updated entry:"
       puts entry
+    end
+
+    def demolish
+      address_book.entries.each do |entry|
+        address_book.entries.delete(entry)
+      end
     end
 end
