@@ -187,8 +187,14 @@ class MenuController
     end
 
     def demolish
-      address_book.entries.each do |entry|
-        address_book.entries.delete(entry)
-      end
+      puts address_book.entries.count
+      # address_book.entries.each do |entry|
+      #   puts entry.inspect
+      #   address_book.entries.delete(entry)
+      # end
+      address_book.demolish
+
+
+      puts address_book.entries.count
     end
 end

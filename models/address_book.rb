@@ -12,7 +12,6 @@ class AddressBook
     @entries = []
   end
 
-
   def add_entry(name, phone_number, email)
     index = 0
     entries.each do |entry|
@@ -21,8 +20,9 @@ class AddressBook
       end
       index += 1
     end
-
+    puts entries.count "string"
     entries.insert(index, Entry.new(name, phone_number, email))
+    puts entries.count
   end
 
   def import_from_csv(file_name)
