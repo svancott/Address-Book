@@ -1,8 +1,8 @@
-# Address Bloc
+# AddressBook
 
 ![book logo](http://findicons.com/files/icons/1683/mac_3d/256/address_book.png)
 
-Address Bloc is an address book application that runs in the terminal, built with ruby on rails.
+**_AddressBook_** is an address book (as you may have guessed!) application that runs in the terminal, built with ruby on rails.
 
 It has all the functions that an address book needs:
 
